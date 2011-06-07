@@ -19,12 +19,12 @@ var_dump($anotation->getAnnotations());
 Available annotation types
 --------------------------
 
- * isset    @value
- * boolean  @value(true)
- * integer  @value(-20)
- * float    @value(-20.2000)
- * string   @value('string')
- * array    @value({1, 2, "text"})
+ * @value [isset]
+ * @value(true) [boolean]
+ * @value(-20) [integer]
+ * @value(-20.2000) [float]
+ * @value('string') [string]
+ * @value({1, 2, "text"}) [array]
 
 
 Example
@@ -65,9 +65,11 @@ Q_Annotation_Autoloader::register();
 $anotation = new Q_Annotation('Test', 'index');
 
 print_r($anotation->getAnnotations());
+```
 
-// result:
+**result:**
 
+```php
 Array
 (
     [IssetValue] => 
