@@ -15,10 +15,8 @@ class Q_Annotation_Parser_Isset extends Q_Annotation_Parser_Abstract
         
         if (!isset($matchesarray[1])) return array();
         
-        $array = $matchesarray[1];
-        
         $returnArray = array();
-        foreach ($array as $value) {
+        foreach ($matchesarray[1] as $value) {
             $returnArray[$value] = null;
         }
         
