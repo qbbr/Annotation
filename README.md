@@ -35,22 +35,22 @@ class Test
 {
     /**
      * @IssetValue
-     * 
+     *
      * @BooleanValue(true)
      * @BooleanValue2(false)
-     * 
+     *
      * @IntegerValue(200)
      * @IntegerValue2(-200)
-     * 
+     *
      * @FloatValue(-3.141592)
      * @FloatValue2(3.141592)
-     * 
+     *
      * @StringValue("omg its text")
      * @StringValue2('omg its text')
-     * 
-     * @Array({1, 2, 3})
-     * @Array2({"omg", 2, 'omg', -20, false, true})
-     * 
+     *
+     * @Array([1, 2, 3])
+     * @Array2(["omg", 2, 'omg', -20, false, true])
+     *
      * @return string
      */
     public function index()
@@ -87,16 +87,15 @@ Array
             [1] => 2
             [2] => 3
         )
- 
+
     [Array2] => Array
         (
-            [0] => "omg"
+            [0] => omg
             [1] => 2
-            [2] => 'omg'
+            [2] => omg
             [3] => -20
             [4] => false
             [5] => true
         )
- 
 )
 ```
