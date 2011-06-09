@@ -16,7 +16,7 @@ class Q_Annotation_Parser
     {
         $this->_docComment = $docComment;
     }
-    
+
     public function getAnnotations()
     {
         $this->parse(new Q_Annotation_Parser_Isset($this->_docComment));
@@ -25,10 +25,10 @@ class Q_Annotation_Parser
         $this->parse(new Q_Annotation_Parser_Float($this->_docComment));
         $this->parse(new Q_Annotation_Parser_String($this->_docComment));
         $this->parse(new Q_Annotation_Parser_Array($this->_docComment));
-        
+
         return $this->_annotations;
     }
-    
+
     /**
      * @param Q_Annotation_Parser_Abstract $parser
      */

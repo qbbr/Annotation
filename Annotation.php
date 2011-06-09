@@ -19,7 +19,7 @@ class Q_Annotation
     public function __construct($class, $method = null)
     {
         $reflectionClass = new ReflectionClass($class);
-        
+
         if (null !== $method) {
             if (false === $reflectionClass->hasMethod($method)) {
                 throw new Q_Annotation_Exception("Method {$method} is not defined in {$class} class ");
@@ -28,16 +28,16 @@ class Q_Annotation
         } else {
             $this->_reflection = $reflectionClass;
         }
-        
+
         $this->parse();
     }
-    
+
     protected function parse()
     {
         $parser = new Q_Annotation_Parser($this->_reflection->getDocComment());
         $this->_annotations = $parser->getAnnotations();
     }
-    
+
     /**
      * @param string $name
      * @return boolean
@@ -46,20 +46,20 @@ class Q_Annotation
     {
         return array_key_exists($name, $this->_annotations);
     }
-    
+
     /**
      * @param string $name
-     * @return mixed 
+     * @return mixed
      */
     public function getAnnotation($name)
     {
         if (false === $this->hasAnnotation($name)) {
             throw new Q_Annotation_Exception("Annotation `{$name}` not found");
         }
-        
+
         return $this->_annotations[$name];
     }
-    
+
     /**
      * @return array
      */

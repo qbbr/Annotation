@@ -18,7 +18,7 @@ abstract class Q_Annotation_Parser_Abstract
     {
         $this->_docComment = $docComment;
     }
-    
+
     /**
      * @return array
      */

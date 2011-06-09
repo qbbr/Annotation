@@ -12,14 +12,14 @@ class Q_Annotation_Parser_Isset extends Q_Annotation_Parser_Abstract
     public function getAnnotations()
     {
         preg_match_all('!@([a-zA-Z0-9]+)\n!', $this->_docComment, $matchesarray);
-        
+
         if (!isset($matchesarray[1])) return array();
-        
+
         $returnArray = array();
         foreach ($matchesarray[1] as $value) {
             $returnArray[$value] = null;
         }
-        
+
         return $returnArray;
     }
 }
