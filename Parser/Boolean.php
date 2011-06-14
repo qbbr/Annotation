@@ -17,7 +17,7 @@ class Q_Annotation_Parser_Boolean extends Q_Annotation_Parser_Abstract
 
         $returnArray = array();
         foreach ($matchesarray[1] as $key => $value) {
-            $returnArray[$value] = ($matchesarray[2][$key] == "false") ? false : true;
+            $returnArray[$value] = ($matchesarray[2][$key] === "false") ? false : true;
         }
 
         return $returnArray;

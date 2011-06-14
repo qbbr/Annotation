@@ -17,10 +17,34 @@ class Q_Annotation_Parser_Array extends Q_Annotation_Parser_Abstract
 
         $returnArray = array();
         foreach ($matchesarray[1] as $key => $value) {
-            $values = preg_split('![\s"\']*,[\s"\']*!', trim($matchesarray[2][$key], '"\''));
-            $returnArray[$value] = $values;
+            $array = explode(',', $matchesarray[2][$key]);
+            $returnArray[$value] = array_map(array($this, 'map'), $array);
         }
 
         return $returnArray;
+    }
+
+    protected function map($value)
+    {
+        return $this->fixType(trim($value));
+    }
+
+    protected function fixType($var)
+    {
+        if (is_numeric($var)) {
+            if (false === strpos($var, '.')) {
+                $var = (integer) $var;
+            } else {
+                $var = (float) $var;
+            }
+        } else if ($var === "false") {
+            $var = false;
+        } else if ($var === "true") {
+            $var = true;
+        } else {
+            $var = trim($var, '"\'');
+        }
+
+        return $var;
     }
 }

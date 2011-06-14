@@ -9,7 +9,7 @@
  */
 class Q_Annotation
 {
-    protected $_reflection = null;
+    protected $_reflection;
     protected $_annotations = array();
 
     /**

@@ -12,11 +12,17 @@ class Q_Annotation_Parser
     protected $_docComment;
     protected $_annotations = array();
 
+    /**
+     * @param string $docComment
+     */
     public function __construct($docComment)
     {
         $this->_docComment = $docComment;
     }
 
+    /**
+     * @return array
+     */
     public function getAnnotations()
     {
         $this->parse(new Q_Annotation_Parser_Isset($this->_docComment));
