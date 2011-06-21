@@ -37,9 +37,9 @@ class Q_Annotation_Parser_Array extends Q_Annotation_Parser_Abstract
             } else {
                 $var = (float) $var;
             }
-        } else if ($var === "false") {
+        } else if ("false" === $var) {
             $var = false;
-        } else if ($var === "true") {
+        } else if ("true" === $var) {
             $var = true;
         } else {
             $var = trim($var, '"\'');
